@@ -1,0 +1,26 @@
+<div class="ligne">
+    <label for="urlImageSaisie">Saisir l'url de l'image</label>
+    <input [(ngModel)]="urlImageSaisie"
+        placeholder="Ex:https://www.voyagejapon.com/cdn/jp-public/takoyaki_1-MAX-w1000h600.jpg">
+    <div class="button" (click)="onClickAjouterImage()">Ajouter image </div>
+</div>
+
+<div class="categories">
+
+    @for(categorie of categories; track $index) {
+
+    <div class="categorie">
+        <div class="en-tete"><span>{{categorie.titre}}</span></div>
+
+        @for(image of categorie.images; track $index){
+
+        <div class="image">
+            <img src="{{image}}">
+        </div>
+        }
+
+    </div>
+
+    }
+
+</div>
